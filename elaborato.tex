@@ -1,0 +1,69 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\author{Alessio Santoro - 7029440}
+\title{Elaborato Calcolo Numerico}
+\date{A.A. 2022/2023}
+\begin{document}
+\maketitle 	
+\textbf{Nota}: Per gli esercizi che prevedono delle \textit{funcion} Matlab, si specifica nella relativa risposta al quesito i file tra gli alleagti a cui essa si riferisce.
+\section{}Si vuole dimostare la seguente espressione:
+$$-\frac{1}{4}f(x-h)-\frac{5}{6}f(x)+\frac{3}{2}f(x+h)-\frac{1}{2}f(x+2h)+\frac{1}{12}f(x+3h)=hf'(x)+O(h^5)$$
+Si considera lo sviluppo delle funzioni $f(x-h), f(x+h), f(x+2h), f(x+3h)$:
+\begin{align*}
+&f(x-h)=f(x)-hf'(x)+\frac{h^2}{2}f''(x)-\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+h)=f(x)+hf'(x)+\frac{h^2}{2}f''(x)+\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+2h)=f(x)+2hf'(x)+\frac{4h^2}{2}f''(x)+\frac{8h^3}{6}f^{(3)}(x)+\frac{16h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+3h)=f(x)+3hf'(x)+\frac{9h^2}{2}f''(x)+\frac{27h^3}{6}f^{(3)}(x)+\frac{81h^4}{24}f^{(4)}(x)+O(h^5)
+\end{align*}
+Si sostiuiscono le espressioni così trovate nella parte sinistra dell'equaziome iniziale e si ottiene la seguente espressione:
+\begin{align*}
+&-\frac{1}{4}\left[f(x)-hf'(x)+\frac{h^2}{2}f''(x)-\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\right]+\\&-\frac{5}{6}\left[f(x)\right]+\\&+\frac{3}{2}\left[f(x)+hf'(x)+\frac{h^2}{2}f''(x)+\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\right]+\\&-\frac{1}{2}\left[f(x)+2hf'(x)+\frac{4h^2}{2}f''(x)+\frac{8h^3}{6}f^{(3)}(x)+\frac{16h^4}{24}f^{(4)}(x)+O(h^5)\right]+\\&+\frac{1}{12}\left[f(x)+3hf'(x)+\frac{9h^2}{2}f''(x)+\frac{27h^3}{6}f^{(3)}(x)+\frac{81h^4}{24}f^{(4)}(x)+O(h^5)\right]
+\end{align*}
+Si procede a moltiplicare i coefficienti di ogni espressione e poi raccogliere i termini che contengono le derivate dello stesso ordine, una volta raccolti i temrini assumono i seguenti valori che, stando all'equazione iniziale dovranno poi essere sommati:
+\begin{align}
+f(x)\left[-\frac{1}{4}-\frac{5}{6}+\frac{3}{2}-\frac{1}{2}+\frac{1}{12}\right]=0\\	f'(x)\cdot h\left[\frac{1}{4}+\frac{3}{2}-\frac{1}{2}2+\frac{1}{12}3\right]=hf'(x)\\f''(x)\cdot\frac{h^2}{2}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}4+\frac{1}{12}9\right]=0\\f^{(3)}(x)\cdot\frac{h^3}{6}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}8+\frac{1}{12}27\right]=0\\f^{(4)}(x)\cdot\frac{h^4}{24}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}16+\frac{1}{12}81\right]=0
+\end{align}
+Dalle espressioni (1)...(5) e dalle proprietà degli "O-grande" di moltiplicazione per una costante segue l'asserto.
+\section{}La doppia precisione dello standard IEEE 754 è una rappresentazione in base binaria, in forma normalizzata ($1.f$) che approssima per arrotondamento e occupa 64 bit, di cui 52 dedicati alla frazione (53 alla mantissa).\\Si può dunque ottenere il valore della precisione di macchina ($u$) dalla seguente espressione, dove: $b=2$ rappresenta la base, e $m=53$ la mantissa:$$u = \frac{1}{2}b^{1-m} = 2^{-53}$$
+Invece \texttt{eps} è definito dalla stessa funzione \texttt{help} di Matlab come 	la distanza tra \texttt{1.0} e il maggior valore a doppia precisione successivo disponibile, ovvero $ 2^{-52} $.
+Si osserva infatti che, considerato il valore $x = 1+u = 1+2^{-53}\neq 1 $ e sia \textit{fl} la funzione di floating, allora vale che $fl(x)=1 $, poichè $u=2^{-53}<2^{-52}=$\texttt{eps}.\\Vi è dunque un errore di rappresentazione del valore \textit{x} ($\varepsilon_x$), determinato dalla seguente espressione:$$\varepsilon_x=\frac{|x-fl(x)|}{|x|}=\frac{|1+2^{-53}-1|}{|1+2^{-53}|}=\frac{|2^{-53}|}{|1+2^{-53}|}<|2^{-53}|=u$$
+\section{}La cancellazione numerica è quel fenomeno in cui, sommando in aritmetica finita due numeri quasi opposti si verifica la perdita di cifre signficative. Questo è dovuto all'espressione del numero di condizionamento della somma in aritmetica finita ($k$) che per due valori $x$ e $y$ è dato da:$$k = \frac{|x|+|y|}{|x+y|}$$Infatti, se $x\rightarrow-y$ allora $k\rightarrow\infty$ e la somma tra $x$ e $y$ risulta mal condizionata.
+\section{}
+Sia $x^*\in\mathbb{R}$ il valore di cui si ricerca la radice sesta.\\
+Per calcolarlo si definisce una funzione $f(x)$ come segue:
+$$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla solo nella radice sesta di $x^*$, quindi avendo un'approsimazione iniziale $x_0$ si può applicare il metodo di Newton alla funzione $f(x)$ per ricercarne una radice che coinciderà con il valore cercato:
+$$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
+La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
+\verbatiminput{functions/radice.m}\pagebreak
+I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{table\_5.txt}:
+\verbatiminput{functions/table_5.txt}
+\section{}
+Il seguente testo è cotnenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
+\verbatiminput{functions/newtonMethod.m}
+Da qui in poi viene presentato il contenuto del file \texttt{secantsMethod.m} che rappresenta il metodo delle secanti:\\
+\verbatiminput{functions/secantsMethod.m}
+
+\section{}
+Nel file \texttt{results\_6.txt} è contenuta la tabella dei risultati delle funzioni precedentemente mostrate:
+\verbatiminput{functions/results_6.txt}
+Per entrambi i metodi, la parte più costosa computazionalmente è la valutazione funzionale, dato che tutte le altre operazioni che vengono svolte sono operazioni elementari.\\
+Il metodo di Newton esegue due valutazioni iniziali e poi due in ogni iterazione.\\
+Sia $n$ il numero di iterazioni, il costo computazionale del metodo di Newton è dato da $2(n+1)$.\\
+Il metodo delle secanti esegue due valutazioni iniziali e poi una per ogni iterazioni, quindi il suo costo computazionale è dato da $n+2$.
+\begin{center}
+\begin{tabular}{||c c c c c||} 
+ \hline
+ Tolleranza & Iterazioni Newton & Costo Newton & Iterazioni secanti & Costo secanti\\ [0.5ex] 
+ \hline\hline
+ $10^{-3}$ & 3 & 8 & 4 & 6 \\ 
+ \hline
+ $10^{-6}$ & 4 & 10 & 6 & 8 \\
+ \hline
+ $10^{-9}$ & 4 & 10 & 6 & 8 \\
+ \hline
+ $10^{-12}$ & 5 & 12 & 7 & 9 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{document}
