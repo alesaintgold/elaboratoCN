@@ -32,10 +32,9 @@ while abs(x-x1) > tol*( 1 + abs(x1))
     fx0 = fx1;
     fx1 = feval(f,x1);
     if fx0 == fx1, error("Invalid initial approximations: "+ ...
-            "Function assume same value in different points");end 
+            "function assume same value in different points");end 
     x = x1-(fx1*(x1-x0)/(fx1-fx0));
 end
-%if i >= itmax, warning("Max number of iterations reached");end
 x_i = [x,i];
 return
 end

@@ -36,8 +36,8 @@ $$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla
 $$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
 La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
 \verbatiminput{functions/radice.m}\pagebreak
-I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{table\_5.txt}:
-\verbatiminput{functions/table_5.txt}
+I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{table\_4.txt}:
+\verbatiminput{functions/table_4.txt}
 \section{}
 Il seguente testo è cotnenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
 \verbatiminput{functions/newtonMethod.m}
@@ -48,22 +48,24 @@ Da qui in poi viene presentato il contenuto del file \texttt{secantsMethod.m} ch
 Nel file \texttt{results\_6.txt} è contenuta la tabella dei risultati delle funzioni precedentemente mostrate:
 \verbatiminput{functions/results_6.txt}
 Per entrambi i metodi, la parte più costosa computazionalmente è la valutazione funzionale, dato che tutte le altre operazioni che vengono svolte sono operazioni elementari.\\
-Il metodo di Newton esegue due valutazioni iniziali e poi due in ogni iterazione.\\
+Il metodo di Newton esegue due valutazioni in ogni iterazione.\\
 Sia $n$ il numero di iterazioni, il costo computazionale del metodo di Newton è dato da $2(n+1)$.\\
-Il metodo delle secanti esegue due valutazioni iniziali e poi una per ogni iterazioni, quindi il suo costo computazionale è dato da $n+2$.
+Il metodo delle secanti esegue due valutazioni iniziali e poi una per ogni iterazione, quindi il suo costo computazionale per $n$ iterazioni è dato da $n+2$.
 \begin{center}
-\begin{tabular}{||c c c c c||} 
+\begin{tabular}{|c c c c c|} 
  \hline
  Tolleranza & Iterazioni Newton & Costo Newton & Iterazioni secanti & Costo secanti\\ [0.5ex] 
- \hline\hline
- $10^{-3}$ & 3 & 8 & 4 & 6 \\ 
  \hline
- $10^{-6}$ & 4 & 10 & 6 & 8 \\
+ $10^{-3}$ & 8 & 16 & 4 & 6 \\ 
  \hline
- $10^{-9}$ & 4 & 10 & 6 & 8 \\
+ $10^{-6}$ & 9 & 18 & 6 & 8 \\
  \hline
- $10^{-12}$ & 5 & 12 & 7 & 9 \\
+ $10^{-9}$ & 10 & 20 & 6 & 8 \\
+ \hline
+ $10^{-12}$ & 10 & 20 & 7 & 9 \\
  \hline
 \end{tabular}
 \end{center}
+\section{}
+
 \end{document}

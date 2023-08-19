@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  4 AUG 2023 11:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  19 AUG 2023 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**elaborato_santoro.tex
-(./elaborato_santoro.tex
+**elaborato.tex
+(./elaborato.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -118,8 +118,8 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count271
 \l__pdf_internal_box=\box53
 )
-(./elaborato_santoro.aux)
-\openout1 = `elaborato_santoro.aux'.
+(./elaborato.aux)
+\openout1 = `elaborato.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -168,7 +168,7 @@ o operazioni elementari[]
  []
 
 [3]
-File: "functions/table_5.txt"  (verbatim)
+File: "functions/table_4.txt"  (verbatim)
 File: "functions/newtonMethod.m"  (verbatim)
 
 Overfull \hbox (38.24666pt too wide) in paragraph at lines 43--43
@@ -183,12 +183,6 @@ gative"); end[]
  []
 
 [4]
-Overfull \hbox (69.74638pt too wide) in paragraph at lines 43--43
-[]\OT1/cmtt/m/n/10 %if itmax<=0, error("Invalid argument: iterations number mus
-t be positive");end[] 
- []
-
-
 Overfull \hbox (74.99634pt too wide) in paragraph at lines 43--43
 []        \OT1/cmtt/m/n/10 error("Value of derivative function is 0, invalid fi
 rst approximation");[] 
@@ -221,68 +215,68 @@ gative"); end[]
 [5]
 File: "functions/results_6.txt"  (verbatim)
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 49--49
-[]    \OT1/cmtt/m/n/10 tolerance    Newton     num iterations N    Secant     n
-um iterations S[] 
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 49--49
+[]\OT1/cmtt/m/n/10 Tolleranza    Ris. Newton    Iterazoni Newton    Ris. secant
+i    Iterazioni secanti[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 49--49
-[]    \OT1/cmtt/m/n/10 _________    _______    ________________    _______    _
-_______________[] 
+Overfull \hbox (111.74602pt too wide) in paragraph at lines 49--49
+[]    \OT1/cmtt/m/n/10 __________    ___________    ________________    _______
+_____    __________________[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 49--49
-[]      \OT1/cmtt/m/n/10 0.001      0.73909           3             0.7391     
-      4[] 
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 49--49
+[]      \OT1/cmtt/m/n/10 0.001         0.73909              8              0.73
+91               4[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 49--49
-[]      \OT1/cmtt/m/n/10 1e-06      0.73909           4            0.73909     
-      6[] 
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 49--49
+[]      \OT1/cmtt/m/n/10 1e-06         0.73909              9             0.739
+09               6[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 49--49
-[]      \OT1/cmtt/m/n/10 1e-09      0.73909           4            0.73909     
-      7[] 
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 49--49
+[]      \OT1/cmtt/m/n/10 1e-09         0.73909             10             0.739
+09               7[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 49--49
-[]      \OT1/cmtt/m/n/10 1e-12      0.73909           5            0.73909     
-      7[] 
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 49--49
+[]      \OT1/cmtt/m/n/10 1e-12         0.73909             10             0.739
+09               7[] 
  []
 
 
-Overfull \hbox (37.36171pt too wide) in paragraph at lines 55--68
+Overfull \hbox (33.36171pt too wide) in paragraph at lines 55--68
  [] 
  []
 
-[6] (./elaborato_santoro.aux) ) 
+[6] (./elaborato.aux) ) 
 Here is how much of TeX's memory you used:
  1826 strings out of 476025
- 26708 string characters out of 5796532
+ 26620 string characters out of 5796532
  1868388 words of memory out of 5000000
  22297 multiletter control sequences out of 15000+600000
  520357 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,9n,62p,530b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on elaborato_santoro.pdf (6 pages, 161315 bytes).
+ 56i,9n,62p,522b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on elaborato.pdf (6 pages, 161074 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
