@@ -10,8 +10,7 @@
 \begin{document}
 \maketitle 	
 \textbf{Nota}: Per gli esercizi che prevedono delle \textit{funcion} Matlab, si specifica nella relativa risposta al quesito i file tra gli alleagti a cui essa si riferisce.
-\section{}Si vuole dimostare la seguente espressione:
-$$-\frac{1}{4}f(x-h)-\frac{5}{6}f(x)+\frac{3}{2}f(x+h)-\frac{1}{2}f(x+2h)+\frac{1}{12}f(x+3h)=hf'(x)+O(h^5)$$
+\section{}
 Si considera lo sviluppo delle funzioni $f(x-h), f(x+h), f(x+2h), f(x+3h)$:
 \begin{align*}
 &f(x-h)=f(x)-hf'(x)+\frac{h^2}{2}f''(x)-\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+h)=f(x)+hf'(x)+\frac{h^2}{2}f''(x)+\frac{h^3}{6}f^{(3)}(x)+\frac{h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+2h)=f(x)+2hf'(x)+\frac{4h^2}{2}f''(x)+\frac{8h^3}{6}f^{(3)}(x)+\frac{16h^4}{24}f^{(4)}(x)+O(h^5)\\&f(x+3h)=f(x)+3hf'(x)+\frac{9h^2}{2}f''(x)+\frac{27h^3}{6}f^{(3)}(x)+\frac{81h^4}{24}f^{(4)}(x)+O(h^5)
@@ -25,7 +24,8 @@ Si procede a moltiplicare i coefficienti di ogni espressione e poi raccogliere i
 f(x)\left[-\frac{1}{4}-\frac{5}{6}+\frac{3}{2}-\frac{1}{2}+\frac{1}{12}\right]=0\\	f'(x)\cdot h\left[\frac{1}{4}+\frac{3}{2}-\frac{1}{2}2+\frac{1}{12}3\right]=hf'(x)\\f''(x)\cdot\frac{h^2}{2}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}4+\frac{1}{12}9\right]=0\\f^{(3)}(x)\cdot\frac{h^3}{6}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}8+\frac{1}{12}27\right]=0\\f^{(4)}(x)\cdot\frac{h^4}{24}\left[-\frac{1}{4}+\frac{3}{2}-\frac{1}{2}16+\frac{1}{12}81\right]=0
 \end{align}
 Dalle espressioni (1)...(5) e dalle proprietà degli "O-grande" di moltiplicazione per una costante segue l'asserto.
-\section{}La doppia precisione dello standard IEEE 754 è una rappresentazione in base binaria, in forma normalizzata ($1.f$) che approssima per arrotondamento e occupa 64 bit, di cui 52 dedicati alla frazione (53 alla mantissa).\\Si può dunque ottenere il valore della precisione di macchina ($u$) dalla seguente espressione, dove: $b=2$ rappresenta la base, e $m=53$ la mantissa:$$u = \frac{1}{2}b^{1-m} = 2^{-53}$$
+\section{}
+La doppia precisione dello standard IEEE 754 è una rappresentazione in base binaria, in forma normalizzata ($1.f$) che approssima per arrotondamento e occupa 64 bit, di cui 52 dedicati alla frazione (53 alla mantissa).\\Si può dunque ottenere il valore della precisione di macchina ($u$) dalla seguente espressione, dove: $b=2$ rappresenta la base, e $m=53$ la mantissa:$$u = \frac{1}{2}b^{1-m} = 2^{-53}$$
 Invece \texttt{eps} è definito dalla stessa funzione \texttt{help} di Matlab come 	la distanza tra \texttt{1.0} e il maggior valore a doppia precisione successivo disponibile, ovvero $ 2^{-52} $.
 Si osserva infatti che, considerato il valore $x = 1+u = 1+2^{-53}\neq 1 $ e sia \textit{fl} la funzione di floating, allora vale che $fl(x)=1 $, poichè $u=2^{-53}<2^{-52}=$\texttt{eps}.\\Vi è dunque un errore di rappresentazione del valore \textit{x} ($\varepsilon_x$), determinato dalla seguente espressione:$$\varepsilon_x=\frac{|x-fl(x)|}{|x|}=\frac{|1+2^{-53}-1|}{|1+2^{-53}|}=\frac{|2^{-53}|}{|1+2^{-53}|}<|2^{-53}|=u$$
 \section{}La cancellazione numerica è quel fenomeno in cui, sommando in aritmetica finita due numeri quasi opposti si verifica la perdita di cifre signficative. Questo è dovuto all'espressione del numero di condizionamento della somma in aritmetica finita ($k$) che per due valori $x$ e $y$ è dato da:$$k = \frac{|x|+|y|}{|x+y|}$$Infatti, se $x\rightarrow-y$ allora $k\rightarrow\infty$ e la somma tra $x$ e $y$ risulta mal condizionata.
@@ -90,5 +90,11 @@ La seguente tabella fornisce i risultati dell'utilizzo delle funzioni precedenti
 \end{tabular}}
 \\\\Come atteso, i metodi di Newton e delle secanti sono più lenti a causa del metodo di Newton modificato, a causa della natura multipla della radice.\\Infatti il metodo di Newton e quello delle secanti hanno convergenza quadratica nel caso di radici a molteplicità 1, ma solo lineare nel caso di radici multiple.\\La modifica che abbiamo fatto, ovvero $x_{i+1} = x_i-m\cdot\frac{f(x_i)}{f'(x_i)}$, nonostante richieda che la molteplcità $m$ della radice sia nota, ripristina la convergenza quadratica del metodo di Newton.\\
 I rislutati sono contentuti nel file \texttt{table\_7.txt} e si mostra di seguito il codice della funztion del metodo di Newton modificato:\\
-\verbatiminput{../functions/modifiedNewtonMethod.m}
+\verbatiminput{../functions/modifiedNewtonMethod.m}%a
+\section{}
+Il codice della \textit{function} è contenuto nel file \texttt{mialu.m}:\\
+\verbatiminput{../functions/mialu.m}%a
+Un esempio di utilizzo è contenuto nel file di testo \texttt{ex\_8\_mialu.txt}:
+%Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
+\verbatiminput{../tables/ex_8_mialu.txt}%a
 \end{document}
