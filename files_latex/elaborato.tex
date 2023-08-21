@@ -35,19 +35,19 @@ Per calcolarlo si definisce una funzione $f(x)$ come segue:
 $$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla solo nella radice sesta di $x^*$, quindi avendo un'approsimazione iniziale $x_0$ si può applicare il metodo di Newton alla funzione $f(x)$ per ricercarne una radice che coinciderà con il valore cercato:
 $$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
 La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
-\verbatiminput{functions/radice.m}
+\verbatiminput{../functions/radice.m}
 \pagebreak
 I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{table\_4.txt}:
-\verbatiminput{tables/table_4.txt}
+\verbatiminput{../tables/table_4.txt}
 \section{}
 Il seguente testo è cotnenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
-\verbatiminput{functions/newtonMethod.m}%a
+\verbatiminput{../functions/newtonMethod.m}%a
 Da qui in poi viene presentato il contenuto del file \texttt{secantsMethod.m} che rappresenta il metodo delle secanti:\\
-\verbatiminput{functions/secantsMethod.m}
+\verbatiminput{../functions/secantsMethod.m}
 
 \section{}
 Nel file \texttt{results\_6.txt} è contenuta la tabella dei risultati delle funzioni precedentemente mostrate:
-\verbatiminput{tables/results_6.txt}
+\verbatiminput{../tables/results_6.txt}
 Per entrambi i metodi, la parte più costosa computazionalmente è la valutazione funzionale, dato che tutte le altre operazioni che vengono svolte sono operazioni elementari.\\
 Il metodo di Newton esegue due valutazioni in ogni iterazione.\\
 Sia $n$ il numero di iterazioni, il costo computazionale del metodo di Newton è dato da $2(n+1)$.\\
@@ -67,6 +67,28 @@ Il metodo delle secanti esegue due valutazioni iniziali e poi una per ogni itera
  \hline
 \end{tabular}
 \end{center}
+\pagebreak
 \section{}
-
+La seguente tabella fornisce i risultati dell'utilizzo delle funzioni precedenti per calcolare la radice della funzione $f(x)=[x-cos(x)]^5$:\\\\
+\texttt{
+\begin{tabular}{|*{5}{c|}}
+	\hline
+	{tolleranza} &	{Newton ris.} &	{Newton iter.} &	{Secant ris.} &	{Secant iter.}\\\hline
+	10e-3 & 0.74512 & 18 & 0.73015 & 26 \\ \hline
+	10e-6 & 0.73909 & 49 & 0.73908 & 70 \\ \hline
+	10e-9 & 0.73909 & 80 & 0.73909 & 115\\ \hline
+	10e-12 & 0.73909 & 111 & 0.73909 & 159\\ \hline
+\end{tabular}}
+\\\\Dopo aver sviluppato la \textit{function} \texttt{modifiedNewtonMethod.m} si sono riscontrati i seguenti risultati:\\\\
+\texttt{
+\begin{tabular}{|*{3}{c|}} \hline
+	tolleranza & risultato Newton modificato & numero di iterazioni \\\hline
+	1e-3 & 0.73909 & 22 \\\hline
+	1e-6 & 0.73909 & 23 \\\hline
+	1e-9 & 	0.73909 & 24 \\\hline
+	1e-12 & 	0.73909 & 24 \\\hline
+\end{tabular}}
+\\\\Come atteso, i metodi di Newton e delle secanti sono più lenti a causa del metodo di Newton modificato, a causa della natura multipla della radice.\\Infatti il metodo di Newton e quello delle secanti hanno convergenza quadratica nel caso di radici a molteplicità 1, ma solo lineare nel caso di radici multiple.\\La modifica che abbiamo fatto, ovvero $x_{i+1} = x_i-m\cdot\frac{f(x_i)}{f'(x_i)}$, nonostante richieda che la molteplcità $m$ della radice sia nota, ripristina la convergenza quadratica del metodo di Newton.\\
+I rislutati sono contentuti nel file \texttt{table\_7.txt} e si mostra di seguito il codice della funztion del metodo di Newton modificato:\\
+\verbatiminput{../functions/modifiedNewtonMethod.m}
 \end{document}

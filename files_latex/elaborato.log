@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  19 AUG 2023 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  21 AUG 2023 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -154,7 +154,7 @@ Overfull \hbox (34.91736pt too wide) in paragraph at lines 35--36
  x[]$\OT1/cmr/m/n/10 , quindi avendo un'approsimazione
  []
 
-File: "functions/radice.m"  (verbatim)
+File: "../functions/radice.m"  (verbatim)
 
 Overfull \hbox (17.24684pt too wide) in paragraph at lines 38--38
 []\OT1/cmtt/m/n/10 %   Questa funzione calcola la radice sesta di un valore non
@@ -168,8 +168,8 @@ o operazioni elementari[]
  []
 
 [3]
-File: "tables/table_4.txt"  (verbatim)
-File: "functions/newtonMethod.m"  (verbatim)
+File: "../tables/table_4.txt"  (verbatim)
+File: "../functions/newtonMethod.m"  (verbatim)
 
 Overfull \hbox (38.24666pt too wide) in paragraph at lines 44--44
 []\OT1/cmtt/m/n/10 %   Ricerca la radice di una funzione di cui ^^Re nota la de
@@ -193,7 +193,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-File: "functions/secantsMethod.m"  (verbatim)
+File: "../functions/secantsMethod.m"  (verbatim)
 
 Overfull \hbox (38.24666pt too wide) in paragraph at lines 46--46
 []\OT1/cmtt/m/n/10 %   Ricerca la radice di una funzione di cui ^^Re nota la de
@@ -213,7 +213,7 @@ gative"); end[]
  []
 
 [5]
-File: "tables/results_6.txt"  (verbatim)
+File: "../tables/results_6.txt"  (verbatim)
 
 Overfull \hbox (90.7462pt too wide) in paragraph at lines 50--50
 []\OT1/cmtt/m/n/10 Tolleranza    Ris. Newton    Iterazoni Newton    Ris. secant
@@ -255,31 +255,82 @@ Overfull \hbox (33.36171pt too wide) in paragraph at lines 56--69
  [] 
  []
 
-[6] (./elaborato.aux) ) 
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 72--93
+
+ []
+
+
+Overfull \hbox (8.99751pt too wide) in paragraph at lines 72--93
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--93
+
+ []
+
+File: "../functions/modifiedNewtonMethod.m"  (verbatim)
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 93--93
+[]\OT1/cmtt/m/n/10 %   Ricerca la radice di una funzione di cui ^^Re nota la de
+rivata a partire[] 
+ []
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 93--93
+[]\OT1/cmtt/m/n/10 if tol<0, error("Invalid arguments: tolerance must be non ne
+gative"); end[] 
+ []
+
+[7]
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 93--93
+[]        \OT1/cmtt/m/n/10 error("Value of derivative function is 0, invalid fi
+rst approximation");[] 
+ []
+
+[8] (./elaborato.aux) ) 
 Here is how much of TeX's memory you used:
- 1827 strings out of 476025
- 26609 string characters out of 5796532
+ 1831 strings out of 476025
+ 26804 string characters out of 5796532
  1868388 words of memory out of 5000000
- 22297 multiletter control sequences out of 15000+600000
+ 22300 multiletter control sequences out of 15000+600000
  520357 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,9n,62p,522b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,9n,62p,554b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 bx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on elaborato.pdf (6 pages, 161074 bytes).
+1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5
+.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb>
+Output written on elaborato.pdf (8 pages, 181326 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

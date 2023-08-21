@@ -1,4 +1,4 @@
-function [x,n] = newtonMethod(f,df, x0, tol)
+function [x,n] = modifiedNewtonMethod(f,df, m, x0, tol)
 %
 %   x = newtonMethod(f,df,x0,tol, itmax)
 %   
@@ -8,6 +8,7 @@ function [x,n] = newtonMethod(f,df, x0, tol)
 %   Input:
 %       f: funzione di cui si ricercano le radici
 %       df: derivata della funzione f
+%       m: molteplicità (nota) della radice
 %       x0: approssimazione iniziale della radice
 %       tol: errore assoluto ammissibile 
 %   Output: 
@@ -15,13 +16,13 @@ function [x,n] = newtonMethod(f,df, x0, tol)
 %       n: numero di iterazioni eseguite 
 
 %controllo valori input
-if nargin ~= 4, error("Missing arguments"); end
+if nargin ~= 5, error("Missing arguments"); end
 if tol<0, error("Invalid arguments: tolerance must be non negative"); end
 x = x0;
 fx = feval(f,x);
 dfx =  feval(f,x);
 
-x = x0- fx/dfx;
+x = x0- m*fx/dfx;
 
 n = 1;
 while abs(x-x0) > tol*( 1 + abs(x0))
@@ -35,7 +36,7 @@ while abs(x-x0) > tol*( 1 + abs(x0))
         error("Value of derivative function is 0, invalid first approximation"); 
     end
     n = n+1;
-    x = x0 - fx/dfx; %calcolo effettivo 
+    x = x0 - m*fx/dfx; %calcolo effettivo 
 end
 return
 end

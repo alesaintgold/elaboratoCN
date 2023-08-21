@@ -31,7 +31,7 @@ for i = 1:n
     if ki > i
         A([i, ki],:) = A([ki, i],:);
         p([i, ki])   = p([ki, i]);
-`    end
+    end
     A(i+1:n,i) = A(i+1:n,i)/A(i,i);
     A(i+1:n,i+1:n) = A(i+1:n,i+1:n) - A(i+1:n,i)*A(i,i+1:n);
 end

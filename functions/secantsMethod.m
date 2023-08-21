@@ -1,4 +1,4 @@
-function x_i = secantsMethod(f, x0, x1, tol)
+function [x,i] = secantsMethod(f, x0, x1, tol)
 %
 %   x = secantsMethod(f,df,x0,tol, itmax)
 %   
@@ -35,6 +35,5 @@ while abs(x-x1) > tol*( 1 + abs(x1))
             "function assume same value in different points");end 
     x = x1-(fx1*(x1-x0)/(fx1-fx0));
 end
-x_i = [x,i];
 return
 end
