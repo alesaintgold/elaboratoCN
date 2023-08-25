@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  25 AUG 2023 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.27)  25 AUG 2023 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -360,18 +360,22 @@ ettore " + ...[]
 
 File: "../tables/10_miaqr.txt"  (verbatim)
 [13] [14] [15]
-File: "../tables/11_miaqr.txt"  (verbatim)
+File: "../tables/11_linsis_mialu_1.txt"  (verbatim)
  [16]
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+File: "../tables/11_linsis_mialu_2.txt"  (verbatim)
+ [17]
+File: "../tables/13_miaqr.txt"  (verbatim)
+ [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
-[17] (./elaborato.aux) ) 
+[20] (./elaborato.aux) ) 
 Here is how much of TeX's memory you used:
- 1858 strings out of 476025
- 27405 string characters out of 5796532
+ 1866 strings out of 476025
+ 27663 string characters out of 5796532
  1867388 words of memory out of 5000000
- 22320 multiletter control sequences out of 15000+600000
+ 22326 multiletter control sequences out of 15000+600000
  520357 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,9n,62p,554b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -389,10 +393,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 re/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on elaborato.pdf (17 pages, 190099 bytes).
+Output written on elaborato.pdf (20 pages, 192280 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
