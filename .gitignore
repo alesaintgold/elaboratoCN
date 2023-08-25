@@ -1,0 +1,4 @@
+*.gz
+*.log
+*.aux
+functions/linsis1.m
