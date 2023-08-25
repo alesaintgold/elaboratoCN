@@ -1,4 +1,114 @@
-#########
-Ancora non c'ho messo niente
-:(
-#########
+% si genera una matice quadrata casuale
+A = randi([-8,8],4)
+
+A =
+
+     0     0     2    -3
+    -1     0    -2     7
+    -1     5     5     6
+    -3     5     1     1
+
+% si generano i valori di una diagonale
+d = randi([5,30],4,1)
+
+d =
+
+    21
+    20
+    10
+    12
+
+% si costruisce una matrice adeguata per la fattorizzazione LDL
+A = tril(A,-1)+triu(A',1)+diag(d)
+
+A =
+
+    21    -1    -1    -3
+    -1    20     5     5
+    -1     5    10     1
+    -3     5     1    12
+
+% Si genera la soluzione, da confrontare dopo
+x = randi([-8,8],4,1)
+
+x =
+
+     0
+    -5
+     6
+    -5
+
+% si calcolano i termini noti
+b = A*x
+
+b =
+
+    14
+   -95
+    30
+   -79
+
+% si usa la funzione per calcolare la soluzione
+mialdl(A,b)
+
+ans =
+
+    0.0000
+   -5.0000
+    6.0000
+   -5.0000
+
+A = randi([-8,8],4)
+
+A =
+
+    -7     7    -4     0
+    -4     4    -1    -5
+     5     0     8     0
+    -8     1     1     2
+
+d = randi([5,30],4,1)
+
+d =
+
+    22
+    15
+    14
+    30
+
+A = tril(A,-1)+triu(A',1)+diag(d)
+
+A =
+
+    22    -4     5    -8
+    -4    15     0     1
+     5     0    14     1
+    -8     1     1    30
+
+x = randi([-8,8],4,1)
+
+x =
+
+    -8
+     7
+     7
+     5
+
+b = A*x
+
+b =
+
+  -209
+   142
+    63
+   228
+
+mialdl(A,b)
+
+ans =
+
+   -8.0000
+    7.0000
+    7.0000
+    5.0000
+
