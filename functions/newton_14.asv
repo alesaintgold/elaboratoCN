@@ -1,0 +1,18 @@
+function [x,nit] = newton(fun,jacobian,x0,tol,maxit)
+%
+%   [x,nit] = newton(fun,jacobian,x0,tol,maxit)
+%
+%   Utilizza il metodo di Newton per risolvere sistemi di equazioni
+%   nonlineari
+%
+%   Input: 
+%       fun: vettore delle funzioni del sistema 
+%       jacobian: matrice jacobiana di fun
+%       x0: approssimazione iniziale
+%       tol: tolleranza aspettata
+%       maxit: numero massimo di iterazioni ammesso
+%   Output:
+%       x: approssimazione della funzione
+%       nit: numero delle iterazioni del metodo
+if(nargin<4), tol = eps;end
+if(nargin<5),maxit = 1
