@@ -2,3 +2,5 @@
 *.log
 *.aux
 functions/linsis1.m
+*.asv
+*done*
