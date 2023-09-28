@@ -9,6 +9,7 @@ Io propongo i seguenti simboli:
 Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 
 |esercizio|svolgimento|relazione|
+|---------|-----------|---------|
 |01|[x]|  |          
 |02|[x]|  |        
 |03|[x]|  |        
