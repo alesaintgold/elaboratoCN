@@ -24,7 +24,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |12|x|x| |
 |13|x|x| |
 |14|x|x| |
-|15| | | |
+|15|s|s| |
 |16|x| |da rivedere la function|
 |17|x| |da rivedere la function|
 |18|x| |da rivedere la function|
