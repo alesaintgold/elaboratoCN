@@ -1,0 +1,29 @@
+>> e = [1:100]'/100
+
+[...]
+
+>> Q = diag(2*ones(1,100)) + diag(ones(1,99),1) + diag(ones(1,99),-1)
+
+[...]
+
+>> fun = @(x) 0.5 * x' * Q * x - e' *(sin((pi/2)*x)+x)
+
+fun =
+
+  function_handle with value:
+
+    @(x)x'/2*Q*x-e'*(sin(pi*x/2)+x)
+
+>> J = @(x) jacobian(fun,x)
+
+J =
+
+  function_handle with value:
+
+    @(x)jacobian(fun,x)
+
+>> x0 = zeros(100,1)'
+
+[...]
+
+da continuare
