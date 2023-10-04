@@ -1,11 +1,24 @@
 function yy = hermite( xi, fi, f1i, xx )
+%   Implementa in modo vettoriale il polinomio interpolante di Hermite
 %
+%   Input:
+%       xi:     vettore delle ascisse di interpolazione
+%       fi:     valori assunti dalla funzione sulle ascisse 
+%               di interpolazione
+%       fii:    valori assunti dalla derivata della funzione sulle ascisse 
+%               di interpolazione
+%       xx:     vettore di ascisse su cui si vuole calcolare il polinomio
+%   Output:
+%       yy:     valori assunti dal polinomio sui punti specificati
+
 n = length(xi);
 if n ~= length(fi) 
-    error("il numero di punti sulle ascisse xi non è coerente con il numero di quelli sulle ordinate fi"); % ---
+    error("il numero di punti sulle ascisse xi " + ...
+        "non è coerente con il numero di quelli sulle ordinate fi");
 end
 if n ~= length(f1i)
-    error("il numero di punti sulle ascisse xi non è coerente con il numero di quelli sulle ordinate fi"); % ---
+    error("il numero di punti sulle ascisse xi non è coerente" + ...
+        " con il numero di quelli sulle ordinate fi"); % ---
 end
 if n ~= length(unique(xi))
     error("le ascisse di interpolazione non sono tutte distinte");
