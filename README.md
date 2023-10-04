@@ -25,7 +25,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |13|x|x| |
 |14|x|x| |
 |15|s| |casini con la jacobiana |
-|16|x| |da rivedere la function|
+|16|x|x| |
 |17|x| |da rivedere la function|
 |18|x| |da rivedere la function|
 |19|x| |da rivedere la function|
