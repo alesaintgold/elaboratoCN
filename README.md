@@ -28,7 +28,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |16|x|x| |
 |17|x| |da rivedere la function|
 |18|x|x|function dovrebbe funzionare, va testata nel 21|
-|19|x| |da rivedere la function|
+|19|x|x| |
 |20|x| |da rivedere la function, plot fatto ma brutto|
 |21|c| |ci sto smattando duro, magari guardiamo insieme|
 |22| | | |
