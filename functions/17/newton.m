@@ -1,21 +1,32 @@
 function l = newton(x,y,xq)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%   Implementa in modo vettoriale, la forma di Newton del polinomio 
+%   interpolante una funzione
+%   
+%   Input:
+%       x:  vettore contenente le ascisse di interpolazione 
+%       y:  valori assunti dalla funzione sulle ascisse di 
+%           interpolazione 
+%       xq: punti su cui si vuole calcolare la funzione
+%   Output:
+%       l:  approsimazione dei valori della funzione secondo 
+%           il polinomio interpolante 
+
 n = length(x);
 if n ~= length(y)
-    error("il numero di punti sulle ascisse x non è coerente con il numero di quelli sulle ordinate");
+    error("il numero di punti sulle ascisse x non è coerente con il numero" + ...
+        " di quelli sulle ordinate");
 end
 if n ~= length(unique(x))
     error("ad una stessa ascissa non possono corrispondere più punti")
 end
-DD = y;
-for k = 1:n-1
+f = y; %differenze divise
+for k = 1:n-1  
     for r = n:-1:k+1
-        DD(r) = (DD(r) - DD(r-1)) ./ (x(r) - x(r-k));
+        f(r) = (f(r) - f(r-1)) ./ (x(r) - x(r-k));
     end
 end
-l = ones(size(xq)) * DD(n);
+l = ones(size(xq)) * f(n);
 for k = n-1:-1:1
-    l = l .* (xq - x(k)) + DD(k);
+    l = l .* (xq - x(k)) + f(k);
 end
 end

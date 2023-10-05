@@ -26,7 +26,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |14|x|x| |
 |15|s| |casini con la jacobiana |
 |16|x|x| |
-|17|x| |da rivedere la function|
+|17|x|x| |
 |18|x|x|function dovrebbe funzionare, va testata nel 21|
 |19|x|x| |
 |20|x| |da rivedere la function, plot fatto ma brutto|
