@@ -23,15 +23,24 @@ end
 if n ~= length(unique(xi))
     error("le ascisse di interpolazione non sono tutte distinte");
 end
-for i = n:2
-    fi(i) = (fi(i) - fi(i-1)) / (xi(i) - xi(i-1));
+x = repelem(xi,2);
+%differenze divise 
+f(1:2:2*n-1)=f1;
+f(2:2:2*n) = f1i;
+% algortimo 4.2 libro
+n = length(f)/2-1;
+for i = (2*n-1):-2:3
+    f(i)= (f(i)-f(i-2))/(x(i)-x(i-1));
 end
-for j = 1:n-1
-    for i = n:-1:j+1
-        f1i(i) = (f1i(i) - fi(i)) / (xi(i) - xi(i-j));
-        fi(i) = (fi(i) - f1i(i-1)) / (xi(i-1) - xi(i-j));
+for j = 2:2*n-1
+    for i = (2*n):-1:j+1
+        f(i) = (f(i)-f(i-1))/(x(i)- x(i-j));
     end
 end
-
+%algoritmo di horner
+n = length(f)-1;
+yy = f(n+1)*ones(size(xx));
+for i = n:-1:1
+    yy = yy .* (xx-x(i))+f(i);
 end
-
+end
