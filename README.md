@@ -31,7 +31,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |19|x|x| |
 |20|x| |da rivedere la function, plot fatto ma brutto|
 |21|c| |ci sto smattando duro, magari guardiamo insieme|
-|22| | | |
+|22|s| | |
 |23| | | |
 |24| | | |
 |25| | | |
