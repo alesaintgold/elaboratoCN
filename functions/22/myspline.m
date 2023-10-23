@@ -11,6 +11,7 @@ function yy = myspline(xi, fi, xx, type )
 %       type:   valore che stabilisce il tipo di spline da creare
 %   Output: 
 %       yy:     valori assunti dalla spline nei rispettivi punti xx 
+
 if nargin < 3, error("argomenti essenziali assenti"); end
 if nargin == 3, type = 1; end
 if size(xi) ~= size(fi), error("Le quantità di dati forniti per " + ...
@@ -44,7 +45,7 @@ if type==0 %spline naturale
     c = phi(2:n-1);      % n-2
     d = 6*f;
 else %spline not-a-knot
-    a = [1 2-phi(1) 2*ones(n-3,1) 2-xhi(n-1) 1];%size 2+n-3+2=n+1
+    a = [1 2-phi(1) 2*ones(1,n-3) 2-xhi(n-1) 1];%size 2+n-3+2=n+1
     b = [0 xhi(i)-phi(i) xhi(2:n-1)];           % 2+n-2=n
     c = [phi(1:n-2) phi(n-1)-xhi(n-1) 0];       % n-2+2 = n
     d = 6*[f(1) f f(end)];
@@ -77,7 +78,7 @@ for j = 1:length(xx)
         if ((xx(j)>=xi(i-1) && xx(j)<=xi(i)) || xx(j)<xi(1))
             r = fi(i-1)-h(i-1)^2/6*m(i-1) ;
             q = (fi(i)-fi(i-1))/h(i-1)-h(i-1)/6*(m(i)-m(i-1)) ;
-            yy (j) =((xx(j)-xi(i-1))^3*m(i)+ ...
+            yy(j) = ((xx(j)-xi(i-1))^3*m(i)+ ...
                 (xi(i)-xx(j))^3*m(i-1))/(6*h(i-1))+...
                 q*(xx(j)-xi(i -1))+...
                 r;

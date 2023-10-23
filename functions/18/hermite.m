@@ -5,7 +5,7 @@ function yy = hermite( xi, fi, f1i, xx )
 %       xi:     vettore delle ascisse di interpolazione
 %       fi:     valori assunti dalla funzione sulle ascisse 
 %               di interpolazione
-%       fii:    valori assunti dalla derivata della funzione sulle ascisse 
+%       f1i:    valori assunti dalla derivata della funzione sulle ascisse 
 %               di interpolazione
 %       xx:     vettore di ascisse su cui si vuole calcolare il polinomio
 %   Output:
@@ -24,13 +24,15 @@ if n ~= length(unique(xi))
     error("le ascisse di interpolazione non sono tutte distinte");
 end
 x = repelem(xi,2);
+
 %differenze divise 
-f(1:2:2*n-1)=f1;
-f(2:2:2*n) = f1i;
+f = zeros(2 * n, 1);
+f(1:2:end) = fi;
+f(2:2:end) = f1i;
 % algortimo 4.2 libro
 n = length(f)/2-1;
 for i = (2*n-1):-2:3
-    f(i)= (f(i)-f(i-2))/(x(i)-x(i-1));
+    f(i) = (f(i)-f(i-2))/(x(i)-x(i-1));
 end
 for j = 2:2*n-1
     for i = (2*n):-1:j+1
