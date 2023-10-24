@@ -4,7 +4,28 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{verbatim}
-\author{Alessio Santoro (7029440) - Bro aggiungiti anche te}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{matlabcode}{
+  language=Matlab,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=false,
+  tabsize=2,
+  showstringspaces=false
+  inputencoding = utf8,  % Input encoding
+  extendedchars = true,  % Extended ASCII
+  literate={é}{{\'e}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ù}{{\`u}}1 {ò}{{\`o}}1
+}
+\lstset{basicstyle=\tiny, style=matlabcode}
+
+\author{Alessio Santoro (7029440) - Lorenzo Campinoti (7030227)}
 \title{Elaborato Calcolo Numerico}
 \date{A.A. 2022/2023}
 \begin{document}
@@ -35,15 +56,18 @@ Per calcolarlo si definisce una funzione $f(x)$ come segue:
 $$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla solo nella radice sesta di $x^*$, quindi avendo un'approsimazione iniziale $x_0$ si può applicare il metodo di Newton alla funzione $f(x)$ per ricercarne una radice che coinciderà con il valore cercato:
 $$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
 La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
-\verbatiminput{../functions/4/radice.m}
+
+\lstinputlisting{../functions/4/radice.m}
+
+
 \pagebreak
 I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{4\_table.txt}:
 \verbatiminput{../tables/4_table.txt}
 \section{}
 Il seguente testo è cotnenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
-\verbatiminput{../functions/5/newtonMethod.m}%a
+\lstinputlisting{../functions/5/newtonMethod.m} %a
 Da qui in poi viene presentato il contenuto del file \texttt{secantsMethod.m} che rappresenta il metodo delle secanti:\\
-\verbatiminput{../functions/5/secantsMethod.m}
+\lstinputlisting{../functions/5/secantsMethod.m}
 
 \section{}
 Nel file \texttt{6\_result.txt} è contenuta la tabella dei risultati delle funzioni precedentemente mostrate:
@@ -90,23 +114,24 @@ La seguente tabella fornisce i risultati dell'utilizzo delle funzioni precedenti
 \end{tabular}}
 \\\\Come atteso, i metodi di Newton e delle secanti sono più lenti a causa del metodo di Newton modificato, a causa della natura multipla della radice.\\Infatti il metodo di Newton e quello delle secanti hanno convergenza quadratica nel caso di radici a molteplicità 1, ma solo lineare nel caso di radici multiple.\\La modifica che abbiamo fatto, ovvero $x_{i+1} = x_i-m\cdot\frac{f(x_i)}{f'(x_i)}$, nonostante richieda che la molteplcità $m$ della radice sia nota, ripristina la convergenza quadratica del metodo di Newton.\\
 I rislutati sono contentuti nel file \texttt{table\_7.txt} e si mostra di seguito il codice della funztion del metodo di Newton modificato:\\
-\verbatiminput{../functions/7/modifiedNewtonMethod.m}%a
+\lstinputlisting{../functions/7/modifiedNewtonMethod.m}%a
 \section{}
 Il codice della \textit{function} è contenuto nel file \texttt{mialu.m}:\\
-\verbatiminput{../functions/8/mialu.m}%a
+\lstinputlisting{../functions/8/mialu.m}%a
 Un esempio di utilizzo è contenuto nel file di testo \texttt{ex\_8\_mialu.txt}:
 %Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
 \verbatiminput{../tables/ex_8_mialu.txt}%a
 
 \section{}
 Il codice della \textit{function} è contenuto nel file \texttt{mialdl.m}:\\
-\verbatiminput{../functions/9/mialdl.m}%a
+\lstinputlisting{../functions/9/mialdl.m}%a
 Un esempio di utilizzo è contenuto nel file di testo \texttt{9\_mialdl.txt}:
 %Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
 \verbatiminput{../tables/9_mialdl.txt}%a
 \section{}
 La funzione è nel file \texttt{functions/miaqr.m}, mostrato di seguito insieme ad un esempio in cui viene applicato:
-\verbatiminput{../functions/10/miaqr.m}
+\\
+\lstinputlisting{../functions/10/miaqr.m}
 \verbatiminput{../tables/10_miaqr.txt}
 \pagebreak
 \section{}
@@ -125,14 +150,27 @@ Di seguito si mostra come sono stati assegnati i valori richiesti, le soluzioni 
 Si osserva come le soluzioni siano coerenti, ma la norma del vettore residuo aumenta, negli ultimi due sistemi è quasi il triplo che nel primo.\\
 \section{}
 La funzione è contenuta nel file \texttt{newton.m} nella cartella \texttt{14}.
-\verbatiminput{../functions/14/newton.m}%a
+\lstinputlisting{../functions/14/newton.m}%a
 \section{•}
 \section{}
-\verbatiminput{../functions/16/lagrange.m}
-\section{}\verbatiminput{../functions/17/newton.m}
-\section{}\verbatiminput{../functions/18/hermite.m}
-\section{}\verbatiminput{../functions/19/chebyshev.m}
+\lstinputlisting{../functions/16/lagrange.m}
+\section{}\lstinputlisting{../functions/17/newton.m}
+\section{}\lstinputlisting{../functions/18/hermite.m}
+\section{}\lstinputlisting{../functions/19/chebyshev.m}
 \section{}
 \section{}
-\section{}\verbatiminput{../functions/22/myspline.m}
+
+Grafici in scala semilogaritmica degli errori di interpolazione commessi dai vari algoritmi di interpolazione.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{../figure/plot21-1}  
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{../figure/plot21-2}  
+\end{figure}
+\clearpage
+\section{}
+\lstinputlisting{../functions/22/myspline.m}
 \end{document}

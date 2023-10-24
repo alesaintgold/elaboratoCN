@@ -19,22 +19,40 @@ errors_hc = eval_error(h,degrees,1,true);
 
 
 % Grafico dell'errore in scala semilogaritmica
-figure;
+figure(1);
 semilogy(degrees, errors_ne, '-o',"Color","Red");
 hold on;
 semilogy(degrees, errors_nc, '-o',"Color","Blue");
 semilogy(degrees, errors_le, '-x',"Color","Green");
 semilogy(degrees, errors_lc, '-x',"Color","Magenta");
-semilogy(degrees, errors_he, '-^',"Color","Black");
+semilogy(degrees, errors_he, '-^',"Color","#ffa500");
 semilogy(degrees, errors_hc, '-^',"Color","Cyan");
 
 grid on;
 
-title('Errore di Interpolazione della Funzione di Runge');
+title('Errore di Interpolazione della Funzione di Runge [2:2:100]');
 xlabel('Grado del Polinomio Interpolante');
 ylabel('Errore in Scala Semilogaritmica');
 
-legend("newton equidistante","newton chebyshev", "lagrange equidistante", " lagrange chebyshev");
+legend("newton equidistante","newton chebyshev", "lagrange equidistante", ...
+    "lagrange chebyshev","hermite equidistante","hermite chebyshev");
+
+figure(2);
+degrees2 = 3:2:99;
+
+errors_he2 = eval_error(h,degrees2,0,true);
+errors_hc2 = eval_error(h,degrees2,1,true);
+
+semilogy(degrees2, errors_he2, '-',"Color","Blue");
+hold on;
+semilogy(degrees2, errors_hc2, '-',"Color","Red");
+grid on;
+title('Errore di Interpolazione della Funzione di Runge [3:2:99]');
+xlabel('Grado del Polinomio Interpolante');
+ylabel('Errore in Scala Semilogaritmica');
+
+legend("hermite equidistante","hermite chebyshev");
+
 
 function errors = eval_error(interpol_fun, degrees, type, d)
 % Funzione di Runge
