@@ -1,7 +1,7 @@
-addpath(genpath('16'));
-addpath(genpath('17'));
-addpath(genpath('19'));
-addpath(genpath('18'));
+addpath(genpath('../16'));
+addpath(genpath('../17'));
+addpath(genpath('../19'));
+addpath(genpath('../18'));
 
 % Gradi dei polinomi interpolanti
 degrees = 2:2:100;

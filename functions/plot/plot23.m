@@ -1,4 +1,4 @@
-addpath(genpath('22'));
+addpath(genpath('../22'));
 
 fun = @(x) 1 ./ (1 + x.^2);
 

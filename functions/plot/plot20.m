@@ -1,3 +1,4 @@
+addpath(genpath('20'));
 
 tl = tiledlayout(2,2);
 title(tl,'Approsimazione della costante di Lebesgue');

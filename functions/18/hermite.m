@@ -35,7 +35,7 @@ for i = (2*n-1):-2:3
     f(i) = (f(i)-f(i-2))/(x(i)-x(i-1));
 end
 for j = 2:2*n-1
-    for i = (2*n):-1:j+1
+    for i = (2*n+2):-1:j+1
         f(i) = (f(i)-f(i-1))/(x(i)- x(i-j));
     end
 end
