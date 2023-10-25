@@ -32,7 +32,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |20|x| |da rivedere la function, plot fatto ma brutto|
 |21|c| |non riesco a plottare correttamente hermite|
 |22|x|x| |
-|23|x| | |
+|23|x|x| |
 |24| | | |
 |25| | | |
 |26| | | |
