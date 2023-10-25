@@ -29,8 +29,8 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |17|x|x| |
 |18|x|x|function dovrebbe funzionare, va testata nel 21|
 |19|x|x| |
-|20|x| |da rivedere la function, plot fatto ma brutto|
-|21|c| |non riesco a plottare correttamente hermite|
+|20|x|x||
+|21|c|x||
 |22|x|x| |
 |23|x| | |
 |24| | | |
