@@ -33,7 +33,7 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |21|c|x||
 |22|x|x| |
 |23|x|x| |
-|24|s| | |
+|24|x|x| |
 |25| | | |
 |26| | | |
 |27| | | |

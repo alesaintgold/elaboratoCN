@@ -7,7 +7,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage{mathtools}
 \lstdefinestyle{matlabcode}{
   language=Matlab,
   basicstyle=\ttfamily\small,
@@ -189,5 +189,29 @@ Grafici in scala semilogaritmica degli errori di interpolazione commessi dai var
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{../figure/esercizio_23}  
+\end{figure}
+\section{}
+Si hanno 1000 coppie di dati $(x_i,y_i)$ che rappresentano un fenomeno fisico descritto da una potenza $y=x^n$. Si sa tuttavia che le coppie sono condizionate da un errore la cui distribuzione segue una gaussiana con media 0 e varianza "piccola". Si vogliono determinare i coefficienti $a_1,\dots,a_m$ ignoti di un polinomio $p(x)$ di grado $m$ che approssima i dati affetti da errore.
+$$p(x)=\sum_{k=0}^ma_kx^k$$$$p(x_i)=y_i, i = 1,\dots,1000$$
+
+Il vettore dei valori attesi è dato dal prodotto matrice-vettore $V\cdot a$:
+$$V = \begin{pmatrix}
+x_0^0 & x_0^1 &\dots & x_0^m\\
+x_1^0 & x_1^1 &\dots & x_1^m\\
+\vdots &\vdots &\ddots &\vdots\\
+x_m^0 & x_m^1 &\dots & x_m^m\\
+\end{pmatrix}, a=\begin{pmatrix}
+  \alpha_{1}\\
+  \vdots \\
+  \alpha_{m} \\
+\end{pmatrix},$$
+\pagebreak
+La matrice $V$ ha rango massimo ed è fattorizzabile QR e quindi il sistema ha soluzione.\\\\
+\textbf{Nota:} Durante il calcolo si usa una versione diversa dell'\textit{algoritmo di Hormer} per il calcolo di un polinomio. Il ciclo dell'algoritmo avviene in modo ascendente invece che discnedente perchè la funzione \texttt{polyfit} restituisce i coefficienti del polinomio secondo la potenza decrescente.\\
+\lstinputlisting{../functions/24/least_square24.m}
+Questo script importa i dati $(x_i,y_i)$ dal file \texttt{data.mat} e li salva in due  diversi vettori. Viene scelto un valore (\texttt{m\_max}) che viene utilizzato come massimo grado ammissibile per il polinomio di approssimazione ai minimi quadrati. All'interno di un ciclo, per ogni $m$ viene utilizzata la funzione \texttt{polyfit} per calcolare i coefficenti di $p(x)$ di grado $m$ e viene salvata nel vettore \texttt{er} l'errore trovato.\\Tutti gli errori vengono mostrati graficati nella figura sottostante, che mostra come il polionomio che meglio approssima i dati $(x_i,y_i)$ è quello di grado $m=5$.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../figure/esercizio_24}  
 \end{figure}
 \end{document}
