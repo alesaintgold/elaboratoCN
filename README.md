@@ -32,8 +32,8 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |20|x|x||
 |21|c|x||
 |22|x|x| |
-|23|x| | |
-|24| | | |
+|23|x|x| |
+|24|s| | |
 |25| | | |
 |26| | | |
 |27| | | |
