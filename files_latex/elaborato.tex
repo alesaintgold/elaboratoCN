@@ -1,4 +1,4 @@
-6\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -56,10 +56,7 @@ Per calcolarlo si definisce una funzione $f(x)$ come segue:
 $$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla solo nella radice sesta di $x^*$, quindi avendo un'approsimazione iniziale $x_0$ si può applicare il metodo di Newton alla funzione $f(x)$ per ricercarne una radice che coinciderà con il valore cercato:
 $$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
 La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
-
 \lstinputlisting{../functions/4/radice.m}
-
-
 \pagebreak
 I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{4\_table.txt}:
 \verbatiminput{../tables/4_table.txt}
@@ -148,10 +145,26 @@ Similemente a quanto si è ottenuto per l'esercizio precedente, si può osservar
 Di seguito si mostra come sono stati assegnati i valori richiesti, le soluzioni trovate con la funzione \texttt{miaqr} sono confrontate con il risultato dell'operatore \texttt{$\backslash$}.
 \verbatiminput{../tables/13\_miaqr.txt}
 Si osserva come le soluzioni siano coerenti, ma la norma del vettore residuo aumenta, negli ultimi due sistemi è quasi il triplo che nel primo.\\
+\pagebreak
 \section{}
 La funzione è contenuta nel file \texttt{newton.m} nella cartella \texttt{14}.
 \lstinputlisting{../functions/14/newton.m}%a
-\section{•}
+
+\pagebreak
+\section{}
+\begin{figure}
+  \centering
+  \includegraphics[width=1.2\textwidth]{../figure/15/tol1e-3.jpg}    
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=1.2\textwidth]{../figure/15/tol1e-8.jpg}    
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=1.2\textwidth]{../figure/15/tol1e-13.jpg}    
+\end{figure}
+\pagebreak
 \section{}
 \lstinputlisting{../functions/16/lagrange.m}
 \section{}\lstinputlisting{../functions/17/newton.m}
@@ -160,13 +173,10 @@ La funzione è contenuta nel file \texttt{newton.m} nella cartella \texttt{14}.
 \section{}
 Il codice della \textit{function} è contenuto nel file \texttt{lebesgue.m}:\\
 \lstinputlisting{../functions/20/lebesgue.m}
-
 \begin{figure}[h]
   \centering
   \includegraphics[width=1.1\textwidth]{../figure/plot20}  
 \end{figure}
-
-
 Si riportano inoltre i grafici dei risultati ottenuti per l'approssimazione della costante di Lebesgue su due intervalli distinti, si nota che il risultato è unicamente dipendente dalla scelta delle ascisse che operiamo e non dagli intervalli considerati.
 \clearpage
 
