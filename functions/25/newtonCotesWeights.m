@@ -1,4 +1,4 @@
-function w = newtonCotesWeight(n)
+function w = newtonCotesWeights(n)
 % w = newtoncotes_weights(n)
 %
 %   Calcola i pesi della formula di quadratura di Newton-Cotes di grado n
@@ -8,8 +8,8 @@ function w = newtonCotesWeight(n)
 %   Output:
 %       w:  vettore dei pesi dei coefficienti
 
-if n <= 0 || mod(n, 1) ~= 0
-    error('Il grado n deve essere un numero intero positivo');
+if ~isnumeric(n) || n <= 0 || mod(n, 1) ~= 0
+    error("Il grado n deve essere un numero intero positivo");
 end
 
 x = 0:n;

@@ -30,12 +30,12 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |18|x|x|function dovrebbe funzionare, va testata nel 21|
 |19|x|x| |
 |20|x|x||
-|21|c|x||
+|21|x|x||
 |22|x|x| |
 |23|x|x| |
 |24|x|x| |
-|25| | | |
-|26| | | |
+|25|x|x| |
+|26|x|x| |
 |27| | | |
 |28| | | |
 |29| | | |
