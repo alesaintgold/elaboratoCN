@@ -22,7 +22,7 @@ end
 
 % view
 figure;
-semilogy(1:m_max, er, '-');
-xlabel('Least-square polynomial degree, m');
-ylabel('Error');
+semilogy(1:m_max, er, "-");
+xlabel("Least-square polynomial degree, m");
+ylabel("Error");
 grid on;

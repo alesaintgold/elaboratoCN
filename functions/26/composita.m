@@ -30,7 +30,7 @@ else
     m=1;
 end
 
-w = newtonCotesWeight(k);
+w = newtonCotesWeights(k);
 
 If = 0;
 Ie = 0;

@@ -15,7 +15,9 @@
 
 \lstdefinestyle{matlabcode}{
   language=Matlab,
-  basicstyle=\ttfamily\small,
+  basicstyle=\ttfamily\footnotesize,
+ % numbers=right,
+ % stepnumber=1,
   keywordstyle=\color{blue},
   commentstyle=\color{green!50!black},
   stringstyle=\color{red},
@@ -35,7 +37,7 @@
 \date{A.A. 2022/2023}
 \begin{document}
 \maketitle 	
-\textbf{Nota}: Per gli esercizi che prevedono delle \textit{funcion} Matlab, si specifica nella relativa risposta al quesito i file tra gli alleagti a cui essa si riferisce.
+\textbf{Nota}: Per gli esercizi che prevedono delle \textit{function} Matlab, si specifica nella relativa risposta al quesito i file tra gli allegati a cui essa si riferisce.
 \section*{Esercizio 1}
 Si considera lo sviluppo delle funzioni $f(x-h), f(x+h), f(x+2h), f(x+3h)$:
 \begin{align*}
@@ -66,9 +68,10 @@ La \texttt{function} che implementa il metodo presentato è contenuta nel file \
 I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{4\_table.txt}:
 \verbatiminput{../tables/4_table.txt}
 \section*{Esercizio 5}
-Il seguente testo è cotnenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
+Il seguente codice è contenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
 \lstinputlisting{../functions/5/newtonMethod.m} %a
-Da qui in poi viene presentato il contenuto del file \texttt{secantsMethod.m} che rappresenta il metodo delle secanti:\\
+\clearpage
+Il seguente codice è contenuto nel file nel file \texttt{secantsMethod.m} e rappresenta il metodo delle secanti:\\
 \lstinputlisting{../functions/5/secantsMethod.m}
 
 \section*{Esercizio 6}
@@ -126,7 +129,7 @@ Un esempio di utilizzo è contenuto nel file di testo \texttt{ex\_8\_mialu.txt}:
 
 \section*{Esercizio 9}
 Il codice della \textit{function} è contenuto nel file \texttt{mialdl.m}:\\
-\lstinputlisting{../functions/9/mialdl.m}%a
+\lstinputlisting{../functions/9/mialdl.m}
 Un esempio di utilizzo è contenuto nel file di testo \texttt{9\_mialdl.txt}:
 %Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
 \verbatiminput{../tables/9_mialdl.txt}%a
@@ -201,6 +204,7 @@ Grafici in scala semilogaritmica degli errori di interpolazione commessi dai var
 \section*{Esercizio 22}
 \lstinputlisting{../functions/22/myspline.m}
 \section*{Esercizio 23}
+Si riporta il plot dell’errore di approssimazione ottenuto utilizzando le spline interpolanti naturale e not-a-knot per approssimare la funzione di Runge sull’intervallo [-5,5], con ascisse equidistanti e grado del polinomio 4:4:400.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.9\textwidth]{../figure/esercizio_23}  
@@ -220,10 +224,10 @@ x_m^0 & x_m^1 &\dots & x_m^m\\
   \vdots \\
   \alpha_{m} \\
 \end{pmatrix},$$
-\pagebreak
 La matrice $V$ ha rango massimo ed è fattorizzabile QR e quindi il sistema ha soluzione.\\\\
-\textbf{Nota:} Durante il calcolo si usa una versione diversa dell'\textit{algoritmo di Hormer} per il calcolo di un polinomio. Il ciclo dell'algoritmo avviene in modo ascendente invece che discnedente perchè la funzione \texttt{polyfit} restituisce i coefficienti del polinomio secondo la potenza decrescente.\\
 \lstinputlisting{../functions/24/least_square24.m}
+\textbf{Nota:} Durante il calcolo si usa una versione diversa dell'\textit{algoritmo di Horner} per il calcolo di un polinomio. Il ciclo dell'algoritmo avviene in modo ascendente invece che discendente perchè la funzione \texttt{polyfit} restituisce i coefficienti del polinomio secondo la potenza decrescente.\\
+
 Questo script importa i dati $(x_i,y_i)$ dal file \texttt{data.mat} e li salva in due  diversi vettori. Viene scelto un valore (\texttt{m\_max}) che viene utilizzato come massimo grado ammissibile per il polinomio di approssimazione ai minimi quadrati. All'interno di un ciclo, per ogni $m$ viene utilizzata la funzione \texttt{polyfit} per calcolare i coefficenti di $p(x)$ di grado $m$ e viene salvata nel vettore \texttt{er} l'errore trovato.\\Tutti gli errori vengono mostrati graficati nella figura sottostante, che mostra come il polionomio che meglio approssima i dati $(x_i,y_i)$ è quello di grado $m=5$.
 \begin{figure}[h!]
   \centering
@@ -257,8 +261,27 @@ Si riporta il codice della funzione contenuta nel file \texttt{composita.m} nell
 \\
 \lstinputlisting{../functions/26/composita.m}
 
+\section*{Esercizio 27}
+Si riporta le approssimazioni del seguente integrale e del relativo errore ottenute mediante la funzione composita implementata nel precedente esercizio.
 
+$$\int_{0}^{1}\left(\sum_{i=1}^{5}i\cos2\pi i x-\mathrm{e}^{i}\sin2(\pi i+0.1)x\right)\mathrm{d}x$$
+\\
+\begin{table}[h]
+	\large
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		k & Stima dell'integrale & Stima dell'errore \\
+		\hline
+		1 & -0.0925980476169039 & 0.192379444267568   \\
+		2 & -0.179803240495078 & 0.00701161675929297  \\
+		3 & -0.178470758042028 & 0.00280027989942712  \\
+		6 & -0.177446511092635 & 6.51467298867454e-07 \\
+		\hline
+	\end{tabular}
+\end{table}
 
+\section*{Esercizio 28}
 
 \end{document}
 
