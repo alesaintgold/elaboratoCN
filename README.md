@@ -35,8 +35,8 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |23|x|x| |
 |24|x|x| |
 |25|x|x| |
-|26|x|x| |
-|27| | | |
+|26|x|x|da rivedere perche' ci sono molte valutazioni funzionali ridondanti: quelle del secondo for|
+|27|x|x| |
 |28| | | |
 |29| | | |
 |30| | | |
