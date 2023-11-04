@@ -27,9 +27,7 @@ f(4) = feval(fun,x3);%f3
 x2 = a+(b-a)/2;
 if nargin==4
     f(1) = feval(fun,a);%f0
-
     f(3) = feval(fun,x2);%f2
-    
     f(5) = feval(fun,b);%f4
 
     nval = 5;
@@ -45,7 +43,7 @@ h = (b-a)/4;
 w = newtonCotesWeights(4);
 If = h*(w*f);
 
-%calcolo errore (che non so ancora come fare    )
+err = 8/945*h^7*max(f); 
 
 if(err>tol)
     [IfL,nvalL] = newtoncotes4(fun,a,x2,tol/2,f(1),f(3),f(2));

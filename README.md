@@ -38,5 +38,5 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |26|x|x|da rivedere perche' ci sono molte valutazioni funzionali ridondanti: quelle del secondo for|
 |27|x|x| |
 |28|c| | |
-|29|s| |mi manca solo l'errore |
+|29|x| | |
 |30| | | |
