@@ -24,10 +24,10 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |12|x|x| |
 |13|x|x| |
 |14|x|x| |
-|15|s| |casini con la jacobiana |
+|15|x|x| |
 |16|x|x| |
 |17|x|x| |
-|18|x|x|function dovrebbe funzionare, va testata nel 21|
+|18|x|x| |
 |19|x|x| |
 |20|x|x||
 |21|x|x||
@@ -37,6 +37,6 @@ Teniamolo aggiornato così quando ci vogliamo lavorare sappiamo da dove partire.
 |25|x|x| |
 |26|x|x|da rivedere perche' ci sono molte valutazioni funzionali ridondanti: quelle del secondo for|
 |27|x|x| |
-|28| | | |
-|29| | | |
+|28|c| | |
+|29|s| | |
 |30| | | |
