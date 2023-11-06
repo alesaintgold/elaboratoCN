@@ -1,4 +1,7 @@
-function [If,nval] = newtoncotes4(fun,a,b,tol,fa,fb,fmed)
+function [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
+%
+%   [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
+%
 % Implementa la formula composita adattativa di Newton-Cotes di grado 4 
 % per calcolare il valore dell'integrale della funzione f nell'intervallo
 % [a,b]
@@ -16,41 +19,64 @@ if nargin<4, error("Argomenti essenziali mancanti");end
 if tol<=0, error("Tolleranza non positiva");end
 if b<a,error("Estremi dell'intervallo non validi");end
 
-f = zeros(5,1);
-
-x1 = a+(b-a)/4;
-f(2) = feval(fun,x1);%f1
-
-x3 = a+3*(b-a)/4;
-f(4) = feval(fun,x3);%f3
-
 x2 = a+(b-a)/2;
-if nargin==4
-    f(1) = feval(fun,a);%f0
-    f(3) = feval(fun,x2);%f2
-    f(5) = feval(fun,b);%f4
+
+if nargin==9
+
+    f = [fa,f1,fm,f3,fb];
+    nval = 0;
+else
+    x1 = (a+x2)/2;
+    x3 = (x2+b)/2;
+
+    x = [a x1 x2 x3 b];
+    f = zeros(1,5);
+    for i =1:5
+        f(i) = feval(fun,x(i));
+    end
 
     nval = 5;
-else
-    f(1) = fa;
-    f(3) = fmed;
-    f(5) = fb;
-
-    nval = 2;
 end
 h = (b-a)/4;
 
-w = newtonCotesWeights(4);
-If = h*(w*f);
+w = [14/45 64/45 8/15 64/45 14/45]';
+If = h*(f*w);
 
-err = 8/945*h^7*max(f); 
 
-if(err>tol)
-    [IfL,nvalL] = newtoncotes4(fun,a,x2,tol/2,f(1),f(3),f(2));
-    [IfR,nvalR] = newtoncotes4(fun,x2,b,tol/2,f(3),f(5),f(4));
+he = (b-a)/8;
+%sottointervallo sinistro
+x5 = (a+x1)/2;
+x6 = (x1+x2)/2;
 
-    If = IfL+IfR;
-    nval = nval + nvalL+ nvalR;
-end
-return ;
+f5 = feval(fun,x5);
+f6 = feval(fun,x6);
+
+fL = [f(1),f5,f(2),f6,f(3)];
+
+IfL = he*(fL*w);
+
+%sottointervallo destro
+x7 = (x2+x3)/2;
+x8 = (x3+b)/2;
+
+f7 = feval(fun,x7);
+f8 = feval(fun,x8);
+
+fR = [f(3),f7,f(4),f8,f(5)];
+
+IfR = he*(fR*w);
+
+nval = nval+4;
+
+If4 = IfL + IfR;
+
+err = abs((If4-If)/63);
+
+if(err<=tol),return;end
+
+[IfL,nvalL] = newtoncotes4(fun,a,x2,tol/2,f(1:3),f5,f6);
+[IfR,nvalR] = newtoncotes4(fun,x2,b,tol/2,f(3:5),f7,f8);
+
+If = IfL+IfR;
+nval = nval + nvalL+nvalR;
 end
