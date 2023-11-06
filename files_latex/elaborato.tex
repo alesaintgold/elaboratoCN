@@ -285,5 +285,41 @@ $$\int_{0}^{1}\left(\sum_{i=1}^{5}i\cos2\pi i x-\mathrm{e}^{i}\sin2(\pi i+0.1)x\
 \section*{Esercizio 29}
 \lstinputlisting{../functions/29/newtoncotesadaptive.m}
 \section*{Esercizio 30}
+Si riporta di seguito le tabelle richieste:\\\\
+\begin{table}[h]
+\resizebox{\columnwidth}{!}{
+	\begin{tabular}{|l|*{5}{c|}}
+		\hline
+		\multicolumn{3}{|c|}{		\textbf{Numero di valutazioni funzionali}} \\\hline
+		\textbf{Tolleranza}&\textbf{Simpson}&\textbf{Newton-Cotes}\\\hline
+0.01&201&333\\
+0.001&333&423\\
+0.0001&605&567\\
+1e-05&1061&819\\
+1e-06&1869&1233\\
+1e-07&3277&1773\\
+1e-08&5921&2637\\
+1e-09&10589&3933\\
+		\hline
+		\end{tabular}}
+\end{table}
+\begin{table}[h]
+\resizebox{\columnwidth}{!}{
+	\begin{tabular}{|l|*{5}{c|}}
+		\hline
+		\multicolumn{3}{|c|}{		\textbf{Errore di Quadratura}} \\\hline
+		\textbf{Tolleranza}&\textbf{Simpson}&\textbf{Newton-Cotes}\\\hline
+	0.01&0.000293528025694267&2.30517976307354e-06\\
+0.001&0.000457223923412076&1.06536072985719e-06\\
+0.0001&2.63547596148772e-05&9.85260983910052e-10\\
+1e-05&2.34481367633599e-06&3.10416783566581e-06\\
+1e-06&3.00762625249362e-07&3.69732803262579e-08\\
+1e-07&3.65647581102024e-08&2.28150845993369e-08\\
+1e-08&3.21109860923485e-09&2.13358331002667e-09\\
+1e-09&3.09839820467062e-10&1.49663392789989e-10\\
+
+		\hline
+		\end{tabular}}
+\end{table}
 \end{document}
 

@@ -14,9 +14,8 @@ function  [If,nval] = simpsonadaptive(fun,a,b,tol,fa,fm,fb)
 %   Output:
 %       If:         Stima dell'integrale
 %       nval:       Numero di valutazioni funzionali effettuate
-if b<=a, error("Intervallo di integrazione non valido");end
-if tol<=0, error("Tolleranza non positiva");end
-
+if tol<0, error("Tolleranza non positiva");end
+if a>b, error("Intervallo non valido");end
 xm = (a+b)/2;
 if nargin ==4
     fa = feval(fun,a);
@@ -29,28 +28,26 @@ else
 end
 
 h = (b-a)/2;
-w = [1 4 1]'/3;
 
-f = [fa fm fb];
+x1 = (a+xm)/2;
+x2 = (b+xm)/2;
 
-I2 = h*(f*w);
+f1 = feval(fun,x1);
+f2 = feval(fun,x2);
+nval = nval +2;
 
-xl = (a+xm)/2;
-xr = (b+xm)/2;
-
-fmL = feval(fun,xl);
-fmR = feval(fun,xr);
-
-If = h*(fmL*w + fmR*w);
+I2 = h*(fa + 4*fm + fb)/3;
+If = h*(fa + 4*f1 + 2*fm + 4*f2 + fb)/6;
 
 err = abs(If-I2)/15;
 
-if err<tol,return;end
+if err>tol        
+    [IfL,navlL] = simpsonadaptive(fun,a,xm,tol/2,fa,f1,fm);
+    [IfR,nvalR] = simpsonadaptive(fun,xm,b,tol/2,fm,f2,fb);
+    
+    If = IfL + IfR;
+    nval = nval + nvalR + navlL;
+end
 
-[IfL,navlL] = simpsonadaptive(fun,a,xm,tol/2,fa,fmL,fm);
-[IfR,nvalR] = simpsonadaptive(fun,xm,b,tol/2,fm,fmR,fb);
-
-If = IfL + IfR;
-nval = nval + nvalR + navlL;
-
+return;
 end
