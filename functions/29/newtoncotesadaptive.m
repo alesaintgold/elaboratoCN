@@ -1,4 +1,4 @@
-function [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
+function [If,nval] = newtoncotesadaptive(fun,a,b,tol,fa,fm,fb,f1,f3)
 %
 %   [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
 %
@@ -74,8 +74,8 @@ err = abs((If4-If)/63);
 
 if(err<=tol),return;end
 
-[IfL,nvalL] = newtoncotes4(fun,a,x2,tol/2,f(1:3),f5,f6);
-[IfR,nvalR] = newtoncotes4(fun,x2,b,tol/2,f(3:5),f7,f8);
+[IfL,nvalL] = newtoncotesadaptive(fun,a,x2,tol/2,f(1:3),f5,f6);
+[IfR,nvalR] = newtoncotesadaptive(fun,x2,b,tol/2,f(3:5),f7,f8);
 
 If = IfL+IfR;
 nval = nval + nvalL+nvalR;
