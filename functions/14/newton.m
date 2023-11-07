@@ -24,7 +24,7 @@ while(nit<maxit&&norm(x-x0)<=tol*(1+norm(x0)))
     x0 = x;
     fx0 = feval(fun,x0);
     jx0 = feval(jacobian,x0);
-    x = x0 - fx0/jx0;
+    x = x0 - fx0\jx0;
 end
 if(nit == maxit)
     disp("Il numero di iterazioni specificato non ha permesso " + ...
