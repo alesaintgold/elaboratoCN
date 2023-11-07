@@ -62,16 +62,16 @@ Sia $x^*\in\mathbb{R}$ il valore di cui si ricerca la radice sesta.\\
 Per calcolarlo si definisce una funzione $f(x)$ come segue:
 $$f(x) = x^6-x^*$$La cui derivata è:$$f'(x)=6x^5$$La funzione $f(x)$ si annulla solo nella radice sesta di $x^*$, quindi avendo un'approsimazione iniziale $x_0$ si può applicare il metodo di Newton alla funzione $f(x)$ per ricercarne una radice che coinciderà con il valore cercato:
 $$x_{i+1}=x_i+\frac{f(x_i)}{f'(x_i)}=x_i-\frac{x_i^6-x^*}{6x_i^5}=\frac{1}{6}\left[5x_i+\frac{x^*}{x_i}\right]$$
-La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m}:
+La \texttt{function} che implementa il metodo presentato è contenuta nel file \texttt{radice.m} nella cartella \texttt{4}:
 \lstinputlisting{../functions/4/radice.m}
 \pagebreak
 I dati sul confronto tra il  risultato offerto dalla funzione e il valore \texttt{x\^ (1/6)} sono contentuti nel file \texttt{4\_table.txt}:
 \verbatiminput{../tables/4_table.txt}
 \section*{Esercizio 5}
-Il seguente codice è contenuto nel file \texttt{newtonMethod.m} e rappresenta il metodo di Newton:
+Il seguente codice è contenuto nel file \texttt{newtonMethod.m} nella cartella \texttt{5} e rappresenta il metodo di Newton:
 \lstinputlisting{../functions/5/newtonMethod.m} %a
 \clearpage
-Il seguente codice è contenuto nel file nel file \texttt{secantsMethod.m} e rappresenta il metodo delle secanti:\\
+Il seguente codice è contenuto nel file \texttt{secantsMethod.m} nella cartella \texttt{5} e rappresenta il metodo delle secanti:\\
 \lstinputlisting{../functions/5/secantsMethod.m}
 
 \section*{Esercizio 6}
@@ -121,20 +121,20 @@ La seguente tabella fornisce i risultati dell'utilizzo delle funzioni precedenti
 I rislutati sono contentuti nel file \texttt{table\_7.txt} e si mostra di seguito il codice della funztion del metodo di Newton modificato:\\
 \lstinputlisting{../functions/7/modifiedNewtonMethod.m}%a
 \section*{Esercizio 8}
-Il codice della \textit{function} è contenuto nel file \texttt{mialu.m}:\\
+Il codice della \textit{function} è contenuto nel file \texttt{mialu.m} nella cartella \texttt{8}:\\
 \lstinputlisting{../functions/8/mialu.m}%a
 Un esempio di utilizzo è contenuto nel file di testo \texttt{ex\_8\_mialu.txt}:
 %Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
 \verbatiminput{../tables/ex_8_mialu.txt}%a
 
 \section*{Esercizio 9}
-Il codice della \textit{function} è contenuto nel file \texttt{mialdl.m}:\\
+Il codice della \textit{function} è contenuto nel file \texttt{mialdl.m} nella cartella \texttt{9}:\\
 \lstinputlisting{../functions/9/mialdl.m}
 Un esempio di utilizzo è contenuto nel file di testo \texttt{9\_mialdl.txt}:
 %Se pensi che i range per i numeri random non vadano bene sentiti libero di cambiare tutto, tanto ho solo fatto copia/incolla dalla console di matlab
 \verbatiminput{../tables/9_mialdl.txt}%a
 \section*{Esercizio 10}
-La funzione è nel file \texttt{functions/miaqr.m}, mostrato di seguito insieme ad un esempio in cui viene applicato:
+La funzione è nel file \texttt{functions/miaqr.m} nella cartella \texttt{10}, mostrato di seguito insieme ad un esempio in cui viene applicato:
 \\
 \lstinputlisting{../functions/10/miaqr.m}
 \verbatiminput{../tables/10_miaqr.txt}
@@ -174,16 +174,23 @@ La funzione è contenuta nel file \texttt{newton.m} nella cartella \texttt{14}.
 \end{figure}
 \pagebreak
 \section*{Esercizio 16}
+Riportiamo in seguito la funzione \texttt{lagrange.m} nella cartella \texttt{16} che implementa il metodo di interpolazione polinomiale con il metodo di Lagrange.
 \lstinputlisting{../functions/16/lagrange.m}
-\section*{Esercizio 17}\lstinputlisting{../functions/17/newton.m}
-\section*{Esercizio 18}\lstinputlisting{../functions/18/hermite.m}
-\section*{Esercizio 19}\lstinputlisting{../functions/19/chebyshev.m}
+\section*{Esercizio 17}
+Riportiamo in seguito la funzione \texttt{newton.m} nella cartella \texttt{17} che implementa il metodo di interpolazione polinomiale con il metodo di Newton.
+\lstinputlisting{../functions/17/newton.m}
+\section*{Esercizio 18}
+Riportiamo in seguito la funzione \texttt{hermite.m} nella cartella \texttt{18} che implementa il metodo di interpolazione polinomiale con il metodo di Hermite.
+\lstinputlisting{../functions/18/hermite.m}
+\section*{Esercizio 19}
+Riportiamo in seguito la funzione \texttt{chebyshev.m} nella cartella \texttt{19} che genera n ascisse di Chebyshev su un intervallo a,b.
+\lstinputlisting{../functions/19/chebyshev.m}
 \section*{Esercizio 20}
-Il codice della \textit{function} è contenuto nel file \texttt{lebesgue.m}:\\
+Il codice della \textit{function} è contenuto nel file \texttt{lebesgue.m} nella cartella \texttt{20}: \\
 \lstinputlisting{../functions/20/lebesgue.m}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=1.1\textwidth]{../figure/plot20}  
+  \includegraphics[width=1.2\textwidth]{../figure/plot20}  
 \end{figure}
 Si riportano inoltre i grafici dei risultati ottenuti per l'approssimazione della costante di Lebesgue su due intervalli distinti, si nota che il risultato è unicamente dipendente dalla scelta delle ascisse che operiamo e non dagli intervalli considerati.
 \clearpage
@@ -202,6 +209,7 @@ Grafici in scala semilogaritmica degli errori di interpolazione commessi dai var
 \newpage
 
 \section*{Esercizio 22}
+Si riporta il codice della funzione \texttt{myspline.m} contenuto nella cartella \texttt{22} che calcola la spline cubica o knot-a-knot:
 \lstinputlisting{../functions/22/myspline.m}
 \section*{Esercizio 23}
 Si riporta il plot dell’errore di approssimazione ottenuto utilizzando le spline interpolanti naturale e not-a-knot per approssimare la funzione di Runge sull’intervallo [-5,5], con ascisse equidistanti e grado del polinomio 4:4:400.
@@ -281,8 +289,11 @@ $$\int_{0}^{1}\left(\sum_{i=1}^{5}i\cos2\pi i x-\mathrm{e}^{i}\sin2(\pi i+0.1)x\
 	\end{tabular}
 \end{table}
 \section*{Esercizio 28}
+Si riporta il codice della funzione \texttt{simpsonadaptive.m} contenuto nella cartella \texttt{28} che calcola l'approssimazione dell'integrale di una funzione con il metodo di simpson adattivo:
 \lstinputlisting{../functions/28/simpsonadaptive.m}
 \section*{Esercizio 29}
+Si riporta il codice della funzione \texttt{newtoncotesadaptive.m} contenuto nella cartella \texttt{29} che calcola l'approssimazione dell'integrale di una funzione con il metodo di Newton-Cotes di grado 4 adattivo:
+
 \lstinputlisting{../functions/29/newtoncotesadaptive.m}
 \section*{Esercizio 30}
 Si riporta di seguito le tabelle richieste:\\\\

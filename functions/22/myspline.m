@@ -1,4 +1,5 @@
 function yy = myspline(xi, fi, xx, type )
+% yy = myspline(xi, fi, xx, type)
 %
 %   Se type è uguale a 0 allora calcola la spline cubica interpolante 
 %   naturale i punti (xi(i),fi(i)), mentre se type è diverso da 0 allora 
@@ -14,15 +15,21 @@ function yy = myspline(xi, fi, xx, type )
 
 if nargin < 3, error("argomenti essenziali assenti"); end
 if nargin == 3, type = 1; end
-if size(xi) ~= size(fi), error("Le quantità di dati forniti per " + ...
-        "l'interpolazione non corrispondono"); end
-if length(xi) ~= length(unique(xi)), error("Le ascisse di " + ...
-        "interpolazione devono essere tutte distinte tra loro");end
+if size(xi) ~= size(fi)
+    error("Le quantità di dati forniti per " + ...
+        "l'interpolazione non corrispondono"); 
+end
+if length(xi) ~= length(unique(xi)) 
+    error("Le ascisse di interpolazione devono essere" + ...
+        " tutte distinte tra loro");
+end
 
 n = length(xi)-1;
 
 h = zeros(1,n);
-for i=1:n, h(i)=xi(i+1)-xi(i);end
+for i=1:n
+    h(i)=xi(i+1)-xi(i);
+end
 phi = zeros(1,n);
 xhi = zeros(1,n);
 for i=1:n-1
@@ -36,18 +43,18 @@ for j = 1 : 2
         f(i) = (f(i)-f(i-1))/(xi(i)-xi(i-j));
     end
 end
-f = f (3: n+1) ; % Calcolo le differenze divise
+f = f (3: n+1) ; 
 
 %definizione diagonali del sistema tridiagonale per trovare m0...mn
 if type==0 %spline naturale 
-    a = 2*ones(n-1,1);  %size n-1
-    b = xhi(1:n-2);     % n-2
-    c = phi(2:n-1);      % n-2
+    a = 2*ones(n-1,1);  
+    b = xhi(1:n-2);     
+    c = phi(2:n-1);      
     d = 6*f;
 else %spline not-a-knot
-    a = [1 2-phi(1) 2*ones(1,n-3) 2-xhi(n-1) 1];%size 2+n-3+2=n+1
-    b = [0 xhi(i)-phi(i) xhi(2:n-1)];           % 2+n-2=n
-    c = [phi(1:n-2) phi(n-1)-xhi(n-1) 0];       % n-2+2 = n
+    a = [1 2-phi(1) 2*ones(1,n-3) 2-xhi(n-1) 1];
+    b = [0 xhi(i)-phi(i) xhi(2:n-1)];           
+    c = [phi(1:n-2) phi(n-1)-xhi(n-1) 0];       
     d = 6*[f(1) f f(end)];
 end
 

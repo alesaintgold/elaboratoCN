@@ -29,7 +29,7 @@ x = repelem(xi,2);
 f = zeros(2 * n, 1);
 f(1:2:end) = fi;
 f(2:2:end) = f1i;
-% algortimo 4.2 libro
+
 n = length(f)/2-1;
 for i = (2*n-1):-2:3
     f(i) = (f(i)-f(i-2))/(x(i)-x(i-1));

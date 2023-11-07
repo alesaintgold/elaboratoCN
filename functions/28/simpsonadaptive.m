@@ -14,6 +14,7 @@ function  [If,nval] = simpsonadaptive(fun,a,b,tol,fa,fm,fb)
 %   Output:
 %       If:         Stima dell'integrale
 %       nval:       Numero di valutazioni funzionali effettuate
+
 if tol<0, error("Tolleranza non positiva");end
 if a>b, error("Intervallo non valido");end
 xm = (a+b)/2;

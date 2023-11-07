@@ -1,5 +1,4 @@
 function [x,nr] = miaqr(A,b)
-% 
 %   [x, nr] = miaqr(A,b)
 %
 %   Calcola la soluzione del sistema lineare sovradimensioanto Ax = b 
@@ -12,10 +11,12 @@ function [x,nr] = miaqr(A,b)
 %   Output: 
 %       x:  soluzione nel senso dei minimi quadrati
 %       nr: norma del vettore resiudo
+
 [m,n] = size(A);
 if(n>=m), errror("Il sistema non è sovradimensionato"); end 
-if(m~=length(b)), error("Le dimensioni della matrice e del vettore " + ...
-        "non sono compatibili");end
+if(m~=length(b))
+    error("Le dimensioni della matrice e del vettore non sono coerenti");
+end
 for i=1:n
     alfa = norm( A(i:m,i));
     if alfa==0,error("La matrice A non ha rango massimo");end

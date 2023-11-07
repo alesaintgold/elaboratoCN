@@ -1,4 +1,6 @@
 function l = newton(x,y,xq)
+% l = newton(x,y,xq) 	
+%
 %   Implementa in modo vettoriale, la forma di Newton del polinomio 
 %   interpolante una funzione
 %   

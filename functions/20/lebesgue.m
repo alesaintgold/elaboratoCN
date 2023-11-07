@@ -1,6 +1,21 @@
 function ll = lebesgue(a, b, nn, type)
+% ll = lebesgue(a, b, nn, type)
+%   
+%   Approssima la costante di Lebesgue per l'interpolazione 
+%   polinomiale sull intervallo [a,b], per i polinomi di 
+%   grado specificato nel vettore nn utilizzando le ascisse 
+%   equidistanti se type è uguale a 0 e quelle di chebyshev 
+%   se type è uguale a uno
 %
+%   Input:
+%       a,b:    intervalli sui quali calcolare le ascisse
+%       nn:     grado dei polinomi
+%       type:   se 0 usa le ascisse equidistante
+%               se 1 usa le ascisse di Chebyshev
 %
+%   Output:
+%       ll:     stima della costante di Lebesgue
+
 if a >= b
     error("l'estremo inferiore dell' intervallo non può essere " + ...
         "minore o coincidente con quello maggiore");

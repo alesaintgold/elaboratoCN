@@ -1,4 +1,5 @@
 function x = chebyshev(n,a,b)
+% x = chebyshev(n,a,b)
 %
 %   Genera n+1 coordinate di Chebyschev nell'intervallo [a,b]
 %
@@ -8,6 +9,7 @@ function x = chebyshev(n,a,b)
 %       b:  estremo superiore dell'intervallpo
 %   Output:
 %       x:  vettore contenente le coordinate
+
 if n <= 0
     error("il grado del polinomio deve essere maggiore di zero");
 end

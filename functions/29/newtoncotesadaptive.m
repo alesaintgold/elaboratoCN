@@ -1,10 +1,10 @@
 function [If,nval] = newtoncotesadaptive(fun,a,b,tol,fa,fm,fb,f1,f3)
+% [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
 %
-%   [If,nval] = newtoncotes4(fun,a,b,tol,fa,fm,fb,f1,f3)
+%   Implementa la formula composita adattativa di Newton-Cotes
+%   di grado 4 per calcolare il valore dell'integrale della 
+%   funzione f nell'intervallo [a,b]
 %
-% Implementa la formula composita adattativa di Newton-Cotes di grado 4 
-% per calcolare il valore dell'integrale della funzione f nell'intervallo
-% [a,b]
 %   Input:
 %       fun:        funzione integranda
 %       a:          estremo sinistro dell'intervallo (a=x0)
@@ -13,8 +13,9 @@ function [If,nval] = newtoncotesadaptive(fun,a,b,tol,fa,fm,fb,f1,f3)
 %       fa,fb,fm:   (opzionali) valori assunti dalla funzione
 %                   nelle ascisse x0, x4, x2 (rispettivamente)
 %   Output: 
-%       If:     stima dell'integrale
-%       nval:    numero di valutazioni funzionali effettuate
+%       If:         stima dell'integrale
+%       nval:       numero di valutazioni funzionali effettuate
+
 if nargin<4, error("Argomenti essenziali mancanti");end
 if tol<=0, error("Tolleranza non positiva");end
 if b<a,error("Estremi dell'intervallo non validi");end
@@ -34,7 +35,6 @@ else
     for i =1:5
         f(i) = feval(fun,x(i));
     end
-
     nval = 5;
 end
 h = (b-a)/4;

@@ -1,5 +1,4 @@
 function [x,nit] = newton(fun,jacobian,x0,tol,maxit)
-%
 %   [x,nit] = newton(fun,jacobian,x0,tol,maxit)
 %
 %   Utilizza il metodo di Newton per risolvere sistemi di equazioni
@@ -15,10 +14,10 @@ function [x,nit] = newton(fun,jacobian,x0,tol,maxit)
 %       x: approssimazione della funzione
 %       nit: numero delle iterazioni del metodo
 
-if(nargin<4), tol = eps;    end
-if(nargin<5), maxit = 1e3;  end
-if(tol<=0),   error("La tolleranza deve essere positiva");          end 
-if(maxit<=0), error("Il numero di iterazioni deve essere positivo");end
+if(nargin<4), tol = eps; end
+if(nargin<5), maxit = 1e3; end
+if(tol<=0),   error("La tolleranza deve essere positiva"); end 
+if(maxit<=0), error("Il numero di iterazioni deve essere positivo"); end
 x = x0;
 nit = 0;
 while(nit<maxit&&norm(x-x0)<=tol*(1+norm(x0)))

@@ -1,5 +1,5 @@
 function w = newtonCotesWeights(n)
-% w = newtoncotes_weights(n)
+% w = newtonCotesWeights(n)
 %
 %   Calcola i pesi della formula di quadratura di Newton-Cotes di grado n
 % 

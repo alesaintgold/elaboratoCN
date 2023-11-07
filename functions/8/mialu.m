@@ -1,18 +1,17 @@
 function x = mialu(A,b)
-%
 % x = mialu(A,b)
 %
-% presa in input una matrice ed un vettore calcola la soluzione del
-% corrispondente sistema lineare utilizzando il metodo di fattorizzazione
-% LU con pivoting parziale
+%   Presa in input una matrice ed un vettore calcola la soluzione del
+%   corrispondente sistema lineare utilizzando il metodo di 
+%   fattorizzazione LU con pivoting parziale
 %
-% Input:
-% A = matrice dei coefficienti
-% b = vettore dei termini noti
+%   Input:
+%       A = matrice dei coefficienti
+%       b = vettore dei termini noti
 %
-% Output:
-% x = soluzione del sistema lineare
-%
+%   Output:
+%       x = soluzione del sistema lineare
+
 [m,n] = size(A);
 if m ~= n
     error("La matrice non è quadrata");

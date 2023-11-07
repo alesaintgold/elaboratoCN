@@ -1,6 +1,5 @@
 function [x,n] = modifiedNewtonMethod(f,df, m, x0, tol)
-%
-%   x = newtonMethod(f,df,x0,tol, itmax)
+%   [x,n] = newtonMethod(f,df,x0,tol, itmax)
 %   
 %   Ricerca la radice di una funzione di cui è nota la derivata a partire
 %   da un approssimazione iniziale mediante il metodo di Newton
@@ -15,7 +14,6 @@ function [x,n] = modifiedNewtonMethod(f,df, m, x0, tol)
 %       x: approssimazione della radice di f
 %       n: numero di iterazioni eseguite 
 
-%controllo valori input
 if nargin ~= 5, error("Missing arguments"); end
 if tol<0, error("Invalid arguments: tolerance must be non negative"); end
 x = x0;
